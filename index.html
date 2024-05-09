@@ -1,55 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeAgenda</title>
-    <link rel="stylesheet" href="./src/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeAgenda</title>
+  <meta property="og:site_name" content="Poke Agenda" />
+  <meta property="og:title" content="Poke Agenda" />
+  <meta property="og:type" content="portfolio" />
+  <meta property="og:description"
+    content="Criei a minha versão de uma Poke Agenda, inicialmente simplificada, mas que em breve será melhorada e incrementada." />
+  <meta property="og:url" content="https://brunolombardidev.github.io/poke-agenda/" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image"
+    content="https://brunolombardidev.github.io/poke-agenda/src/assets/thumbnail-1200x630px.png" />
+  <meta name="twitter:image"
+    content="https://brunolombardidev.github.io/poke-agenda/src/assets/thumbnail-1200x630px.png">
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
 
-    <section>
-        <div class="fundo">
-            <div class="agenda agEsquerda">
-                <img class="pokedex dexBase" src="./src/img/bg-pokedex-aberta.png" />
-                <div class="pesquisa">
-                    <input class="busca" placeholder="Pesquisar">
-                    <button class="botao">Q</button>
-                </div>
-                <div class="telaEsq">
-                    <img class="terreno" src="./src/img/bg-terreno-grama.png" />
-                </div>
-                <div class="pokemon">
-                    <img class="avatar" src="./src/img/pokemons/bulbasaur.gif" />
-                </div>
-                <div class="nome">
-                    <h2>Bulbasauro | 001</h2>
-                </div>
-                <div class="painel">
-                    <button class="botao">Anterior</button>
-                    <button class="botao">Próximo</button>
-                </div>
-            </div>
+  <div class="pokedex">
 
-            <div class="agenda agDireita">
-                <img class="pokedex dexTampa" src="./src/img/bg-pokedex-tampa.png" />
-                <div class="telaDir">
-                    <h4>TIPO</h4>
-                    <span class="tipo grama">GRAMA</span>
-                    <span class="tipo venenoso">VENENOSO</span><p>
-                    <span class="descritivo">Há uma semente de planta em suas costas desde o dia que este Pókemon nasce. A semente cresce lentamente.</span>
-                    <h4>FRAQUEZAS</h4>
-                    <span class="tipo fogo">FOGO</span>
-                    <span class="tipo gelo">GELO</span>
-                    <span class="tipo psiquico">PSIQUICO</span>
-                    <span class="tipo voador">VOADOR</span>
-                    <p><hr>
-                    <h4>EVOLUÇÕES</h4>
-                    <span class="descritivo">Ivysauro (002) & Venusauro (003)</span>
-                </div>
-            </div>
+    <div class="testeira">
+      <div class="lampadas">
+        <div class="separaLed">
+          <div class="leds ledAzul"></div>
         </div>
-    </section>
-    
+        <div class="leds ledPeq ledVermelho"></div>
+        <div class="leds ledPeq ledAmarelo"></div>
+        <div class="leds ledPeq ledVerde"></div>
+      </div>
+    </div>
+
+    <div class="molduraTela">
+      <div class="lampadas central">
+        <div class="leds ledMini ledVermelho"></div>
+        <div class="leds ledMini ledVermelho"></div>
+      </div>
+      <div class="telaImagem">
+        <img id="pokemon-image" src="" alt="Pokemon Image">
+      </div>
+      <div class="nomeNumero">
+        <div class="leds ledPeq ledVermelho"></div>
+        <span class="titulo" id="pokemon-info"></span>
+        <div>
+          <div class="linha"></div>
+          <div class="linha"></div>
+          <div class="linha"></div>
+          <div class="linha"></div>
+          <div class="linha"></div>
+          <div class="linha"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="telaTexto">
+
+      <div class="caixaTexto">
+        <span class="descritivo" id="pokemon-description"></span>
+      </div>
+
+      <hr>
+
+      <div class="caixaTexto" id="types">
+        <label for="pokemon-types">Tipos:</label>
+        <span class="tipos" id="pokemon-types"></span>
+      </div>
+
+      <hr>
+      
+      <div class="caixaTexto" id="advantages">
+        <label for="pokemon-advantages">Desvantagem:</label>
+        <span class="tipos" id="pokemon-advantages"></span>
+      </div>
+
+    </div>
+
+    <div class="caixaBotoes" id="controls">
+      <button onclick="previousPokemon()">〈 Anterior</button>
+      <button class="destaque" onclick="toggleModal()">Buscar ⌕</button>
+      <button onclick="nextPokemon()">Próximo 〉</button>
+    </div>
+
+  </div>
+
+  <div id="modal-bg" class="modal-bg">
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <input type="text" id="search-input" oninput="filterPokemon()" placeholder="Buscar Pokemon...">
+        <div class="textoLista" id="pokemon-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/pokedex.js"></script>
+  <script src="./src/pokemonData.js"></script>
 </body>
 </html>

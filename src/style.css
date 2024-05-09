@@ -1,249 +1,254 @@
+:root {
+  --color-vermelho1: rgb(184, 0, 0);
+  --color-vermelho2: rgb(255, 0, 0);
+  --color-azul1: rgb(0, 0, 255);
+  --color-azul2: rgb(116, 171, 255);
+  --color-amarelo1: rgb(255, 255, 0);
+  --color-verde1: rgb(0, 128, 0);
+  --color-white1: rgb(255, 255, 255);
+  --color-black1: rgb(41, 41, 41);
+  --color-grey1: rgb(70, 70, 70);
+  --color-grey2: rgb(185, 185, 185);
+}
+
 body {
-    margin: 0px;
-    padding: 0px;
-    background-image: linear-gradient(to bottom right, rgb(54, 181, 255), rgb(0, 99, 156));
-    font-family:Arial, Helvetica, sans-serif;
-    color: #fff;
-}
-
-/* Textos */
-
-h2 {
-    margin: 0px;
-    padding: 0px;
-    font-size: 18px;
-    color: #333;
-}
-
-h4 {
-    margin: 8px 0px;
-    padding: 0px;
-    font-size: 12px;  
-    color: #888;
-}
-
-.textoBotao {
-    font-weight: bold;
-}
-
-.descritivo {
-    font-size: 14px;
-}
-
-hr {
-    margin: 10px 2px;
-    padding: 0px;
-    border: 1px solid #666;
+  background-color: var(--color-vermelho1);
+  color: var(--color-white1);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Imagens */
 
-.pokedex {
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
+#pokemon-image {
+  margin: 10px;
+  padding: 0px;
+  display: none;
+  z-index: 998;
 }
 
-.terreno {
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    height: 160px;
-    border: 2px solid #888;
-    border-radius: 10px;
-    object-fit: cover;
-    object-position: center;
+/* Textos */
+
+.titulo {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-grey1);
 }
 
-.avatar {
-    margin: 0px;
-    padding: 0px;
-    width: 60px;
+.descritivo {
+  font-size: 14px;
+  color: var(--color-grey2);
 }
 
-/* Estruturas */
-
-.fundo {
-    margin: 0px auto;
-    padding: 0px;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.tipos {
+  font-size: 14px;
+  color: var(--color-grey2);
 }
 
-.agenda {
-    margin: 0px -10px;
-    padding: 0px;
-    height: 500px;
-    border-radius: 25px;
-    position: relative;
-}
-.agEsquerda {
-    width: 400px;
-    z-index:2;
-}
-.agDireita {
-    width: 360px;
-    z-index:1;
-    top: 106px
+.textoLista {
+  margin: 10px auto;
+  color: var(--color-black1);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 25px;
+  cursor: pointer;
 }
 
-.pesquisa {
-    margin: 0px;
-    padding: 0px;
-    width: 180px;
-    height: 35px;
-    z-index:4;
-    position: relative;
-    top: -415px;
-    left: 140px;
-    display: flex;
-	align-items: center;
-    justify-content: right;
+/* Estrutura */
+
+.pokedex{
+  margin: 10px auto;
+  width: 350px;
+  height: 630px;
 }
 
-.telaEsq {
-    margin: 0px;
-    padding: 0px;
-    width: 240px;
-    height: 150px;
-    z-index:3;
-    position: relative;
-    top: -380px;
-    left: 55px;
-    background-image: url("./src/img/bg-terreno-grama.png") no-repeat;
-    background-size: cover;
-    background-clip: border-box;
+.testeira {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid var(--color-black1);
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.pokemon {
-    margin: 0px;
-    padding: 0px;
-    width: 150px;
-    height: 150px;
-    text-align: center;
-    z-index:4;
-    position: relative;
-    top: -445px;
-    left: 100px;
+.molduraTela {
+  margin: 10px;
+  padding: 10px;
+  height: 210px;
+  border: 0px;
+  border-bottom: 5px solid var(--color-black1);
+  border-right: 5px solid var(--color-black1);
+  border-radius: 15px;
+  background-color: var(--color-white1);
+  align-items: center;
 }
 
-.nome {
-    margin: 0px;
-    padding: 5px;
-    width: 200px;
-    height: 20px;
-    z-index:3;
-    position: relative;
-    top: -512px;
-    left: 92px;
-    text-align: right;
+.telaImagem {
+  margin: 5px auto;
+  padding: 10px;
+  width: 90%;
+  height: 130px;
+  border: 1px solid var(--color-grey2);
+  border-radius: 10px;
+  background-image: url("./img/01-terreno.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.telaDir {
-    margin: 0px;
-    padding: 10px 15px;
-    width: 270px;
-    height: 270px;
-    border-radius: 12px;
-    z-index:3;
-    position: relative;
-    top: -360px;
-    left: 38px;
-    background-color: #333;
+.nomeNumero {
+  margin: 2px;
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.painel {
-    margin: 0px;
-    padding: 0px;
-    width: 268px;
-    position: relative;
-    z-index:4;
-    top: -486px;
-    left: 44px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.telaTexto {
+  margin: 15px 10px;
+  padding: 10px;
+  height: 200px;
+  border-radius: 15px;
+  background-color: var(--color-black1);
+}
+
+.caixaTexto {
+  margin: 5px;
+}
+
+.caixaBotoes {
+  margin: 0px auto;
+  text-align: center;
 }
 
 /* Campos */
 
-.busca {
-    margin: 0px;
-    padding: 2px 10px;
-    width: 115px;
-    height: 20px;
-    border: 2px solid #333;
-    border-radius: 15px;
-    background-color: #ddd;
+button {
+  margin: 2px;
+  padding: 10px 15px;
+  border: 0px;
+  border-right: 5px solid var(--color-black1);
+  border-bottom: 5px solid var(--color-black1);
+  border-radius: 10px;
+  background-color: var(--color-grey2);
+  color: var(--color-grey1);
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.pesquisa .botao {
-    margin-left: 2px;
-    padding: 0px;
-    min-width: 30px;
-    min-height: 30px;
-    border: 1px solid #333;
-    border-radius: 50%;
-    background-color: #666;
-    color: #ccc;
-    font-size: 14px;
+.destaque {
+  background-color: var(--color-white1);
+  color: var(--color-black1);
+}
+
+/* Formas */
+
+hr {
+  margin: 10px 0px;
+  width: 95%;
+  border: 1px solid var(--color-grey1);
+}
+
+.linha {
+  margin: 2px;
+  width: 25px;
+  height: 2px;
+  background-color: var(--color-grey2);
+}
+
+.central {
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+.lampadas {
+  display: flex;
+  flex-direction: row;
+}
+
+.leds {
+  margin: auto 5px;
+  padding: 2px;
+  border: 1px solid var(--color-grey1);
+  border-radius: 50%;
+}
+
+.ledPeq {
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+.ledMini {
+  margin-top: 5px;
+  width: 5px;
+  height: 5px;
+}
+
+.ledAzul {
+  margin: 0px;
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(0,161,255,1) 0%, rgba(0,78,124,1) 100%);
+}
+
+.separaLed {
+  margin: 5px 10px;
+  padding: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-white1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ledVermelho {
+  background-color: var(--color-vermelho2);
+}
+
+.ledAmarelo {
+  background-color: var(--color-amarelo1);
+}
+
+.ledVerde {
+  background-color: var(--color-verde1);
+}
+
+/* Modal */
+
+.modal-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
+  
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .modal-content {
+    background-color: var(--color-white1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
     cursor: pointer;
-}
-
-.painel .botao {
-    margin: 0px;
-    padding: 0px;
-    width: 126px;
-    height: 45px;
-    border: 0px;
-    border-radius: 6px;
-    background-color: #666;
-    color: #ccc;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Tipos */
-
-.tipo {
-    margin: 10px 2px;
-    padding: 5px 10px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    font-size: 10px;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.fogo {
-    background-color: rgb(199, 42, 42);
-}
-
-.gelo {
-    background-color: rgb(188, 242, 255);
-}
-
-.grama {
-    background-color: rgb(42, 199, 42);
-}
-
-.psiquico {
-    background-color: rgb(255, 0, 242);
-}
-
-.terrestre {
-    background-color: rgb(143, 86, 0);
-}
-
-.venenoso {
-    background-color: rgb(150, 0, 142);
-}
-
-.voador {
-    background-color: rgb(255, 255, 255);
-}
+    color: var(--color-white1);
+    font-size: 40px;
+  }
