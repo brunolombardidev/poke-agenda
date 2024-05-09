@@ -5,7 +5,7 @@ displayPokemon(currentIndex);
 
 function displayPokemon(index) {
   const pokemon = pokemonData[index];
-  document.getElementById("pokemon-image").src = `src/img/${pokemon.name.toLowerCase()}-${padNumber(pokemon.number)}.gif`;
+  document.getElementById("pokemon-image").src = `./img/${pokemon.name.toLowerCase()}-${padNumber(pokemon.number)}.gif`;
   document.getElementById("pokemon-image").alt = pokemon.name;
   document.getElementById("pokemon-info").textContent = `${padNumber(pokemon.number)} ${pokemon.name}`;
   document.getElementById("pokemon-description").textContent = pokemon.description;
