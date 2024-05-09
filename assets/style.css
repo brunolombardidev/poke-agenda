@@ -88,7 +88,7 @@ body {
   height: 130px;
   border: 1px solid var(--color-grey2);
   border-radius: 10px;
-  background-image: url("./img/01-terreno.png");
+  background-image: url("./img/fundos/01-terreno.png");
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
